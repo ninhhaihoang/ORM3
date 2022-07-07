@@ -37,4 +37,18 @@ public class HibernateUtils {
 //        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 //        return factory.getValidator();
 //    }
+
+    /*
+     * demo validator
+     */
+    private static Validator validator = buildValidator();
+
+    public static Validator getValidator() {
+        return validator;
+    }
+
+    private static Validator buildValidator() {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        return factory.getValidator();
+    }
 }

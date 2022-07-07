@@ -37,8 +37,7 @@ public class EntryTest implements Serializable {
     @Range(min = 0, max = 10)
     private BigDecimal technicalResult;
     @Column(name = "result")
-    @Length(min = 4, max = 4)
-    @Pattern(regexp = "(pass)|(fail)")
+    @Pattern(regexp = "pass|fail", message = "must be pass or fail")
     private String result;
     @Column(name = "remark")
     private String remark;

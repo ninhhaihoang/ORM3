@@ -34,8 +34,8 @@ public class Candidate implements Serializable {
     private Date dateOfBirth;
 
     @Column(name = "gender")
-//    @Range(min = 0, max = 1)
-    @Pattern(regexp = "[0-1]{1}?")
+    @Range(min = 0, max = 1, message = "only accept 0 (female) or 1 (male) value")
+//    @Pattern(regexp = "[0-1]") it cannot work properly because of data type, if you want to use pattern, change it to String
     private int gender;
 
     @Column(name = "graduation_year")
@@ -44,12 +44,10 @@ public class Candidate implements Serializable {
 
     @Column(name = "phone", unique = true)
     @NotNull
-//    @UniqueElements
     private String phone;
 
     @Column(name = "email", unique = true)
     @NotNull
-//    @UniqueElements
     private String email;
 
     @Column(name = "skill")
